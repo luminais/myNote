@@ -1,0 +1,19 @@
+1.win10系统运行secpol.msc 打开本地安全策略 
+2.安全策略->本地策略->安全选项 
+3.右侧找到“网络安全:LAN管理器身份验证级别”打开，选择“仅发送NTLMv2响应，拒绝LM和NTLM”点确定。 
+4.本路径下再找到“网络访问：本地账户的共享和安全模型”打开，选择“仅来宾”
+
+删除凭证
+https://blog.51cto.com/mengix/1895969
+
+解决win10不能访问samba共享问题
+http://www.3gcomet.com/%E8%A7%A3%E5%86%B3win10%E4%B8%8D%E8%83%BD%E8%AE%BF%E9%97%AEsamba%E5%85%B1%E4%BA%AB%E9%97%AE%E9%A2%98/
+
+删除磁盘映射：
+
+1
+net use * /del  /y
+net use U: /del /y
+* ：所有映射到windows的磁盘盘符，也可以指定具体的如Z: 、Y:
+
+/y：如果不加这个，每次都会提示你是否删除磁盘映射
